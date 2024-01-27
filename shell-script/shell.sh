@@ -1,4 +1,5 @@
 #!/bin/bash 
+source logger-shell.sh
 echo "Hello world"
 i=0
 a=1
@@ -40,7 +41,25 @@ function hello() {
     now
 } 
 function now() {
-    echo "$(date)"
+    echo $(date)
 }
 hello Aden Troy 
-echo " $time";
+
+# case statement
+echo "--------case-----"
+var="no"
+case $var in
+    [yY]|[yY][eE][sS])
+        logInfo $LINENO "OK"
+        echo "value: 1"
+        ;;
+    [nN]|[nN][oO])
+        logWarn $LINENO "Warning"
+        echo "value: 2"
+        ;;
+    *)
+        logError $LINENO "Can not get right input"
+        echo "default value"
+        ;;
+esac
+
