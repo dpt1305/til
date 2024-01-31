@@ -12,7 +12,11 @@ function installApplication() {
     sudo snap install spotify discord;
    
     # java
-    sudo apt-get install openjdk-11-jdk -y;
+    installJava
+
+    # maven
+    sudo apt-get install maven -y;
+
 
     # intelliJ
     # mkdir IntelliJ
@@ -27,6 +31,13 @@ function installApplication() {
 function installNeoVim() {
     sudo apt install neovim;
     
+}
+
+function installJava() {
+    sudo apt-get install openjdk-11-jdk -y;
+    # echo "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64" >> ~/.bashrc
+    # echo "export PATH=${PATH}:${JAVA_HOME}/bin" >> ~/.bashrc
+    # source ~/.bashrc
 }
 
 if [[ "$NAME" =~ ^(Ubuntu).*$ ]] ; then
