@@ -70,8 +70,6 @@ function installLazyGit() {
 
     echo "\# lazygit" >> ~/.bashrc;
     echo "alias lzg=lazygit" >> ~/.bashrc;
-    echo "alias lzg=lazygit" >> ~/.bashrc;
-    echo "alias lzg=lazygit" >> ~/.bashrc;
 }
 
 if [[ "$NAME" =~ ^(Ubuntu).*$ ]] ; then
